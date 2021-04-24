@@ -24,8 +24,6 @@ import {convertDurationToTimeString} from '../utils/convertDurationToTimeString'
 
 import styles from './home.module.scss';
 
-
- 
 type Episode = {
   id: string;
   title: string;
@@ -44,11 +42,12 @@ type HomeProps ={
 
 export default function Home({latestEpisodes,allEpisodes}: HomeProps) { 
   const { playList } = usePlayer();
+  
 
   const episodeList = [...latestEpisodes, ...allEpisodes];
 
-  return ( 
-  <div className={styles.homePage}>
+  return (     
+  <div className={styles.homePage}>    
     <section className={styles.latestEpisodes}>
       <h2>Últimos Lançamentos</h2>
       <ul>

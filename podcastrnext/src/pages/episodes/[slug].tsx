@@ -9,6 +9,7 @@ import styles from './episode.module.scss'
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePlayer } from '../../contexts/PlayerContext';
+import { Head } from 'next/document';
 
 
 type Episode = {
@@ -30,14 +31,16 @@ type EpisodeProps = {
 
 export default function Episode({episode}: EpisodeProps){
     const {play} = usePlayer();
+   
 
     const router = useRouter();
     if(router.isFallback){
         return <p>Carregando...</p>
     }
     
-    return(
-        <div className={styles.episode}>
+    return(        
+        <div className={styles.episode}>          
+         
             <div className={styles.thumbnailContainer}>
                <Link href = "/">
                <button type="button">
