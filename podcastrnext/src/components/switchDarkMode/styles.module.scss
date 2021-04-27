@@ -1,0 +1,9 @@
+.buttonSwitch {
+    display: flex;
+    align-items: center;    
+    color: var(--dark-mode-text);
+    margin-left: 3rem;    
+    span{
+        margin-left: 2.5rem;
+    }
+}

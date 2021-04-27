@@ -11,6 +11,7 @@
   
 }*/
 /* SSG export async function getStaticProps() {}*/
+import {useContext} from 'react';
 import {GetStaticProps} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,6 +19,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import {format, parseISO} from 'date-fns';
 
 import { usePlayer } from '../contexts/PlayerContext';
+import {darkModeContext} from '../contexts/DarkModeContext';
 import {api} from '../services/api';
 import {convertDurationToTimeString} from '../utils/convertDurationToTimeString';
 
@@ -42,12 +44,13 @@ type HomeProps ={
 
 export default function Home({latestEpisodes,allEpisodes}: HomeProps) { 
   const { playList } = usePlayer();
+  const {isDarkModeEnabled} = useContext(darkModeContext);
   
 
   const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (     
-  <div className={styles.homePage}>    
+  <div className={isDarkModeEnabled? styles.homepageDarkMode : styles.homepage}>    
     <section className={styles.latestEpisodes}>
       <h2>Últimos Lançamentos</h2>
       <ul>

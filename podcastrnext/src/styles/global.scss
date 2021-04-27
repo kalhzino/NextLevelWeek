@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 :root{
     --white: #FFF;
@@ -18,6 +19,11 @@
     --purple-400: #9164FA; 
     --purple-500: #8257E5;
     --purple-800: #6F48C9;
+
+    --dark-mode-600: #2d333b;
+    --dark-mode-800: #1e2228;
+    --dark-mode-text: #cdd9d9; 
+    --dark-mode-purple: #33294a;
 }
 @media (max-width: 1080px){
     html{
@@ -28,6 +34,11 @@
 @media(max-width: 720px){
     html{
         font-size: 87,5%; //14px
+    }
+}
+@media(max-width: 1366px){
+    html{
+        font-size: 72.5%;
     }
 }
 

@@ -5,11 +5,12 @@ import Image from 'next/image';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
-
+import {darkModeContext} from '../../contexts/DarkModeContext';
 
 export function Player(){
     const audioRef = useRef<HTMLAudioElement>(null);
     const [progress, setProgress] = useState(0);
+    const{isDarkModeEnabled} = useContext(darkModeContext)
 
     function setupProgressListener(){
         audioRef.current.currentTime = 0;
@@ -64,7 +65,7 @@ export function Player(){
     
 
        return(
-        <div className={styles.playerContainer}>
+        <div className={isDarkModeEnabled? styles.playerContainerDark : styles.playerContainer}>
             <header>
                 <img src="/playing.svg" alt="Tocando agora"/>
                 <strong>Tocando Agora</strong>
@@ -77,7 +78,7 @@ export function Player(){
                         <span>{episode.members}</span>
                     </div>
             ) : (
-                <div className={styles.emptyPlayer}>
+                <div className={isDarkModeEnabled? styles.emptyPlayerDark : styles.emptyPlayer}>
             <strong>Selecione um podcast para ouvir</strong>
                  </div>
             )}
