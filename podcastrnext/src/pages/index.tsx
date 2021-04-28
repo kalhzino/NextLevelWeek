@@ -50,7 +50,7 @@ export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
   const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (     
-  <div className={isDarkModeEnabled? styles.homepageDarkMode : styles.homepage}>    
+  <div className={isDarkModeEnabled? styles.homepageDarkMode : styles.homePage}>    
     <section className={styles.latestEpisodes}>
       <h2>Últimos Lançamentos</h2>
       <ul>

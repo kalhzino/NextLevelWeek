@@ -1,17 +1,59 @@
 .homePage{
     padding: 0.4rem;
     height: calc(100vh - 6.5rem);
-    overflow-y: scroll;
+    overflow-y: scroll;   
 
     h2{
-        margin-top: 4.5rem;
-        margin-bottom:2.5rem;
-        
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;        
+    }    
+ }
+ 
+.homepageDarkMode {
+    padding: 0.4rem; 
+    height: calc(100vh - 6.5rem); 
+    overflow-y: scroll; 
+    background: var(--dark-mode-800);
+
+    h2 {       
+        color: (--dark-mode-text); 
+        margin-top: 3rem;
+        margin-bottom: 1.5rem; 
     }
+    .latestEpisodes {
+        li {
+            background: var(--dark-mode-600);
+            color:  (--dark-mode-text); 
+            border: var(--gray-500);
+
+            }
+        
+            .darkModeText {
+                color: var(--dark-mode-text);
+            }
+
+            button {
+                background: var(--dark-mode-purple);
+                border: 1px solid var(--gray-500);
+            }
+        }
+
+        .allEpisodes { 
+            a {
+                color: var(--dark-mode-text);
+            }
+
+            button {
+                background: var(--dark-mode-purple);
+                border: 1px solid var(--gray-500);
+            }
+        }
+    } 
+
     
-}
 .latestEpisodes{
     ul{
+        
         list-style: none;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -104,11 +146,11 @@
         }
     }
 }
-.allEpisodes{
+.allEpisodes{    
     padding-bottom: 2rem;
-    table{
+    table{        
         width: 100%;
-        th,td{
+        th,td{            
             padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--gray-100);
         }
@@ -119,7 +161,7 @@
             text-align: left;
         }
     }
-    td{
+    td{        
         font-size: 0.875rem;
         img{
             width: 2.5rem;
@@ -158,46 +200,3 @@
         }
     }
 }
-.homepageDarkMode {
-    padding: 0.4rem; 
-    height: calc(100vh - 6.5rem); 
-    //overflow-y: scroll; 
-    background: var(--dark-mode-800);
-
-    h2 {
-        //margin-top: 3rem; 
-       // margin-bottom: 1.5rem; 
-        color: (--dark-mode-text); 
-    }
-    .latestEpisodes {
-        li {
-            background: var(--dark-mode-600);
-            color:  (--dark-mode-text); 
-            border: var(--gray-500);
-
-            }
-        
-            .darkModeText {
-                color: var(--dark-mode-text);
-            }
-
-            button {
-                background: var(--dark-mode-purple);
-                border: 1px solid var(--gray-500);
-            }
-        }
-
-        .allEpisodes { 
-            a {
-                color: var(--dark-mode-text);
-
-            }
-
-            button {
-                background: var(--dark-mode-purple);
-                border: 1px solid var(--gray-500);
-            }
-        }
-
-
-    } 
